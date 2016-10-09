@@ -1,6 +1,6 @@
 ---
 title: SNMP Improviment
-abbrev: I-D
+abbrev: 
 date: 2016
 category: info
 ipr: trust200902
@@ -23,7 +23,8 @@ It is an application layer protocol widely used in network management systems to
 
 # Introduction
 
-[ Insert introduction here ]
+One of the weaknesses SNMP protocol is the transmission of a large volume of unnecessary information to the manager when it makes a request for specific information to the agent. This document presents a proposal that serves as an alternative to contonar the mentioned weakness.
+In the first section will present a brief description of the SNMP protocol. Then, in section two the SNMP commands are described. In Section three discussed the standard protocol procedure. Section four will address the SNMP protocol weaknesses. The last section will bring the proposal for improving the SNMP protocol.
 
 ## Terminology
 
