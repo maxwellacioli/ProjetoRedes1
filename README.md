@@ -31,6 +31,7 @@ author:
 normative:
   RFC1157:
   RFC1066:
+  RFC1213:
 
 informative:
 
@@ -56,6 +57,9 @@ The manager stays on the network servers. Its main rule is to request and receiv
 The agent is present on each node of the network managed by SNMP. It’s important to notice that an agent is not necessarily a computer. Any device connected to the network with support to SNMP will behave like an agent.
 
 ## MIB
+
+MSI (Structure of Management Information) is a method for defining managed objects and their respective managements. It is a set of objects contained in a device management information.
+MIB-II {{RFC 1213}} is a specific MIB. Its main objective is to provide specific information about the managed device via TCP / IP. Proprietary MIBs are developed by manufacturers of devices because through them it is possible that a manufacturer add specific information to your devices.
 
 # Protocol Commands
 
