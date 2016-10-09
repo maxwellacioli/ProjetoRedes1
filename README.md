@@ -63,3 +63,16 @@ MIB-II {{RFC1213}} is a specific MIB. Its main objective is to provide specific 
 
 # Protocol Commands
 
+
+The SNMP doesn’t have a lot of commands. These commands must indicate the name (which is unique for each object) of the object. 
+
+1. GET - Sent by the manager to a managed device. It aims to retrieve one or more values from the managed device.
+2. GETNEXT - Retrieves the value of the next OID in the MIB tree.
+3. GETBULK - Used to retrieve voluminous data form large MIB table.
+4. SET - Modify or assign the value of the managed device.
+5. INFORM - This command is similar to the TRAP command. It includes confirmation from the SNMP manager on receiving the message.
+6. TRAP - This command is initialized by the Agent, unlike the GET’s and SET’s. It announces the occurrence of an event in the managed device to the manager.
+7. RESPONSE - It is the command used to carry back the value(s) or signal of actions directed by the SNMP Manager.
+
+# Proposal
+
