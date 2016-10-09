@@ -53,7 +53,9 @@ and "OPTIONAL" are to be interpreted as described in BCP 14, RFC 2119
 
 # Description
 
-## Master Manager
+## Manager
+
+The manager stays on the network servers. Its main rule is to request and receive from the agents necessary informations to manage the network. 
 
 ## Agent
 
