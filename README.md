@@ -135,5 +135,22 @@ The SNMP doesn’t have a lot of commands. These commands must indicate the name
 
 # SNMP Weakness
 
+-This protocol is not appropriated for the managment of large and complex networks, due to the limitation on the pooling performance (pooling is the operation performed to begin a transaction between manager and agent);
+-
+-The basic SNMP standard provides only common authentication, to this problem the SNMP Research presents the ESO (Extended Security Options), a extended standard of encryption using the SNMPv3 standard technics. It defines, creates and deploys improvements to the security of the SNMPv3 architecture. Those three factors imply strong encryption, third party authentication and ignition key;
+-
+-The SNMP MIB model is limitated and doesn't support applications wich question the managment, based on values and object types.
+
 # Proposal
 
+-In this proposal, we assume that the network must have a master manager. The function of the master manager, besides requesting and receiving the agents metadata for controlling the network, is to learn the usage patterns with respect to time. After some time has passed, the master manager infers the state that must be set to a given variable based on usage history.
+-
+-This intelligence must be integrated with the manager software using a reinforcement learning algorithm such as Q-learning.
+-
+-But why?
+-
+-Let's imagine a scenario in IoT (Internet-of-Things). My home has a server controlling all the lights in the house. In this server, I'm using a SNMP manager in the server to control the status of each lamp. Each lamp has been set as a SNMP agent. With time and use, the server learns the exact time that I come home and turn on the lights. In a certain moment, when I come home, the server will automagically turn on the lights for me.
+-
+-And if I change my habits?
+-
+-We propose to the software developers to include a reinforcement learning algorithm in the implementation of SNMP software suite for dealing with these cases. It may take a while, but it will adapt to the behaviors of the user.
