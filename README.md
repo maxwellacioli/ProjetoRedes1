@@ -19,14 +19,32 @@ author:
     phone: +55-82-3241-1401
     email: meas@ic.ufal.br
  -
-    ins: R. Pessoa
-    name: Rubens Pessoa
+    ins: R. P. de B. Filho
+    name: Rubens Pessoa de Barros Filho
     org: Federal University of Alagoas
     street: Av. Lourival Melo Mota, S/N
     city: Maceio
     country: Brazil
     phone: +55-82-3241-1401
     email: rpbf@ic.ufal.br
+ -
+    ins: H. G. Barbosa
+    name: Helivelton Gomes Barbosa
+    org: Federal University of Alagoas
+    street: Av. Lourival Melo Mota, S/N
+    city: Maceio
+    country: Brazil
+    phone: +55-82-3241-1401
+    email: helivelton@ic.ufal.br
+ -
+    ins: M. C. dos Santos
+    name: Manoela Cassia dos Santos
+    org: Federal University of Alagoas
+    street: Av. Lourival Melo Mota, S/N
+    city: Maceio
+    country: Brazil
+    phone: +55-82-3241-1401
+    email: manoelacs@ic.ufal.br
     
 normative:
   RFC1157:
@@ -61,6 +79,45 @@ The agent is present on each node of the network managed by SNMP. It’s importa
 MSI (Structure of Management Information) is a method for defining managed objects and their respective managements. It is a set of objects contained in a device management information.
 MIB-II {{RFC1213}} is a specific MIB. Its main objective is to provide specific information about the managed device via TCP / IP. Proprietary MIBs are developed by manufacturers of devices because through them it is possible that a manufacturer add specific information to your devices.
 
+~~~~~~~~~~
+
++-+-+-+-+-+ 
+|mib-II(1)|
++-+-+-+-+-+
+|  +-+-+-+-+-+ 
+|--|system(1)|
+|  +-+-+-+-+-+
+|  +-+-+-+-+-+-+-+ 
+|--|interfaces(2)|
+|  +-+-+-+-+-+-+-+
+|  +-+-+-+
+|--|at(3)|
+|  +-+-+-+
+|  +-+-+-+ 
+|--|ip(4)|
+|  +-+-+-+
+|  +-+-+-+-+ 
+|--|icmp(5)|
+|  +-+-+-+-+
+|  +-+-+-+-+
+|--|tcp(6) |
+|  +-+-+-+-+
+|  +-+-+-+-+
+|--|udp(7) |
+|  +-+-+-+-+
+|  +-+-+-+-+ 
+|--|egp(8) |
+|  +-+-+-+-+
+|  +-+-+-+-+-+-+-+-+-+ 
+|--|transmission(10) |
+|  +-+-+-+-+-+-+-+-+-+
+|  +-+-+-+-+-+ 
+|--|snmp(11) |
+   +-+-+-+-+-+
+   
+~~~~~~~~~~
+{: #figops title="MIB-II structure"}
+
 # Protocol Commands
 
 
@@ -78,22 +135,5 @@ The SNMP doesn’t have a lot of commands. These commands must indicate the name
 
 # SNMP Weakness
 
-This protocol is not appropriated for the managment of large and complex networks, due to the limitation on the pooling performance (pooling is the operation performed to begin a transaction between manager and agent);
-
-The basic SNMP standard provides only common authentication, to this problem the SNMP Research presents the ESO (Extended Security Options), a extended standard of encryption using the SNMPv3 standard technics. It defines, creates and deploys improvements to the security of the SNMPv3 architecture. Those three factors imply strong encryption, third party authentication and ignition key;
-
-The SNMP MIB model is limitated and doesn't support applications wich question the managment, based on values and object types.
-
 # Proposal
 
-In this proposal, we assume that the network must have a master manager. The function of the master manager, besides requesting and receiving the agents metadata for controlling the network, is to learn the usage patterns with respect to time. After some time has passed, the master manager infers the state that must be set to a given variable based on usage history.
-
-This intelligence must be integrated with the manager software using a reinforcement learning algorithm such as Q-learning.
-
-But why?
-
-Let's imagine a scenario in IoT (Internet-of-Things). My home has a server controlling all the lights in the house. In this server, I'm using a SNMP manager in the server to control the status of each lamp. Each lamp has been set as a SNMP agent. With time and use, the server learns the exact time that I come home and turn on the lights. In a certain moment, when I come home, the server will automagically turn on the lights for me.
-
-And if I change my habits?
-
-We propose to the software developers to include a reinforcement learning algorithm in the implementation of SNMP software suite for dealing with these cases. It may take a while, but it will adapt to the behaviors of the user.
