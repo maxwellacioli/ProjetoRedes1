@@ -10,8 +10,23 @@ pi: [toc, sortrefs, symrefs, comments]
 
 author:
  -
-    name: Maxwell Acioli, Rubens Pessoa
-    organization: Federal University Alagoas
+    ins: M. E. A. Silva
+    name: Maxwell Esdra Acioli Silva
+    org: Federal University of Alagoas
+    street: Av. Lourival Melo Mota, S/N
+    city: Maceio
+    country: Brazil
+    phone: +55-82-3241-1401
+    email: meas@ic.ufal.br
+ -
+    ins: R. Pessoa
+    name: Rubens Pessoa
+    org: Federal University of Alagoas
+    street: Av. Lourival Melo Mota, S/N
+    city: Maceio
+    country: Brazil
+    phone: +55-82-3241-1401
+    email: rpbf@ic.ufal.br
 
 normative:
   RFC2119:
