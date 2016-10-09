@@ -78,6 +78,12 @@ The SNMP doesn’t have a lot of commands. These commands must indicate the name
 
 # SNMP Weakness
 
+This protocol is not appropriated for the managment of large and complex networks, due to the limitation on the pooling performance (pooling is the operation performed to begin a transaction between manager and agent);
+
+The basic SNMP standard provides only common authentication, to this problem the SNMP Research presents the ESO (Extended Security Options), a extended standard of encryption using the SNMPv3 standard technics. It defines, creates and deploys improvements to the security of the SNMPv3 architecture. Those three factors imply strong encryption, third party authentication and ignition key;
+
+The SNMP MIB model is limitated and doesn't support applications wich question the managment, based on values and object types.
+
 # Proposal
 
 In this proposal, we assume that the network must have a master manager. The function of the master manager, besides requesting and receiving the agents metadata for controlling the network, is to learn the usage patterns with respect to time. After some time has passed, the master manager infers the state that must be set to a given variable based on usage history.
