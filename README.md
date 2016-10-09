@@ -1,6 +1,6 @@
 ---
-title: SNMP Improviment
-abbrev: 
+title: Suggestion for Improvement in the SNMP Protocol
+abbrev: SNMP Improviment
 date: 2016
 category: info
 ipr: trust200902
