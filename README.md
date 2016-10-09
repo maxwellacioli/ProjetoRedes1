@@ -74,5 +74,9 @@ The SNMP doesn’t have a lot of commands. These commands must indicate the name
 6. TRAP - This command is initialized by the Agent, unlike the GET’s and SET’s. It announces the occurrence of an event in the managed device to the manager.
 7. RESPONSE - It is the command used to carry back the value(s) or signal of actions directed by the SNMP Manager.
 
+# Standard Procedures
+
+# SNMP Weakness
+
 # Proposal
 
