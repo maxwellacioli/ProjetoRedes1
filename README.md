@@ -53,6 +53,8 @@ The manager stays on the network servers. Its main rule is to request and receiv
 
 ## Agent
 
+The agent is present on each node of the network managed by SNMP. It’s important to notice that an agent is not necessarily a computer. Any device connected to the network with support to SNMP will behave like an agent.
+
 ## MIB
 
 # Protocol Commands
