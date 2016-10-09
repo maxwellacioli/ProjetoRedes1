@@ -5,6 +5,9 @@ date: 2016
 category: info
 ipr: trust200902
 
+stand_alone: yes
+pi: [toc, sortrefs, symrefs, comments]
+
 author:
  -
     name: Maxwell Acioli, Rubens Pessoa
