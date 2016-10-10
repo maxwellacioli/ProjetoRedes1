@@ -69,7 +69,7 @@ SNMP is an application layer protocol widely used in network management systems.
 
 # Introduction
 
-One of the weaknesses of SNMP {{RFC1157}} is the transmission of a large volume of unnecessary information to the manager when it receives a response from the agent after a request. This information is carried in MIB {{RFC1066}} as part of the agent's response. This document presents a proposal that serves as an alternative to solve the mentioned weakness.
+One of the weaknesses of SNMP {{RFC1157}} is the transmission of a large volume of unnecessary information to the manager when it receives a response from the agent after a request. This information is carried in MIB (Management Information Base) {{RFC1066}} as part of the agent's response. This document presents a proposal that serves as an alternative to solve the mentioned weakness.
 In the first Section we present a brief description of the SNMP. Then, in Section 2 we describe SNMP commands. In Section 3 we discuss the standard protocol procedure. Section 4 addresses the SNMP weaknesses. The last Section will bring the proposal for improving the protocol.
 
 # Description
@@ -84,12 +84,12 @@ The manager stays on the network servers. Its main rule is to request and receiv
 
 ## Agent
 
-The agent is present on each node of the network managed by SNMP. It’s important to notice that an agent is not necessarily a computer. Any device connected to the network with support to SNMP will behave like an agent.
+The agent is present on each node of the network managed by SNMP. It is important to notice that an agent is not necessarily a computer. Any device connected to the network with support to SNMP will behave like an agent.
 
 ## MIB
 
-MSI (Structure of Management Information) is a method for defining managed objects and their respective managements. It is a set of objects contained in a device management information.
-MIB-II {{RFC1213}} is a specific MIB. Its main objective is to provide specific information about the managed device via TCP / IP. Proprietary MIBs are developed by manufacturers of devices because through them it is possible that a manufacturer add specific information to your devices.
+MSI (Structure of Management Information) is a method to define managed objects and their respective managements. It is a set of objects contained in a device management information.
+MIB-II {{RFC1213}} is a specific MIB. Its main objective is to provide information about the managed device by TCP / IP. Figure 1 shows the MIB-II structure.
 
 ~~~~~~~~~~
 
@@ -130,8 +130,9 @@ MIB-II {{RFC1213}} is a specific MIB. Its main objective is to provide specific 
 ~~~~~~~~~~
 {: #mib2 title="MIB-II Structure"}
 
-# Protocol Commands
+Device manufacturers can develop proprietary MIBs. This makes it possible to add specific information to their devices in MIB. 
 
+# Protocol Commands
 
 The SNMP doesn’t have a lot of commands. These commands must indicate the name (which is unique for each object) of the object. 
 
@@ -198,6 +199,6 @@ But why?
 
 Let's imagine a scenario in IoT (Internet-of-Things). My home has a server controlling all the lights in the house. In this server, I'm using a SNMP manager in the server to control the status of each lamp. Each lamp has been set as a SNMP agent. With time and use, the server learns the exact time that I come home and turn on the lights. In a certain moment, when I come home, the server will automagically turn on the lights for me.
 
-Were if I changed my habits?
+What if I changed my habits?
 
 We propose the software developers to include a reinforcement learning algorithm in the implementation of SNMP software suite for dealing with these cases. It may take a while, but it will adapt to the behaviors of the user.
