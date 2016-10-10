@@ -89,7 +89,7 @@ The agent is present on each node of the network managed by SNMP. It is importan
 ## MIB
 
 MSI (Structure of Management Information) is a method to define managed objects and their respective managements. It is a set of objects contained in a device management information.
-MIB-II {{RFC1213}} is a specific MIB. Its main objective is to provide information about the managed device by TCP / IP. Figure 1 shows the MIB-II structure.
+MIB-II {{RFC1213}} is a specific MIB. Its main objective is to provide information about the managed device via TCP/IP. Figure 1 shows the MIB-II structure.
 
 ~~~~~~~~~~
 
@@ -134,19 +134,19 @@ Device manufacturers can develop proprietary MIBs. This makes it possible to add
 
 # Protocol Commands
 
-The SNMP doesn’t have a lot of commands. These commands must indicate the name (which is unique for each object) of the object. 
+The SNMP does not have a lot of commands. The commands must indicate the an unique name for each object. 
 
 1. GET - Sent by the manager to a managed device. It aims to retrieve one or more values from the managed device.
 2. GETNEXT - Retrieves the value of the next OID in the MIB tree.
 3. GETBULK - Used to retrieve voluminous data form large MIB table.
-4. SET - Modify or assign the value of the managed device.
+4. SET - Modifies or assigns the value of the managed device.
 5. INFORM - This command is similar to the TRAP command. It includes confirmation from the SNMP manager on receiving the message.
 6. TRAP - This command is initialized by the Agent, unlike the GET’s and SET’s. It announces the occurrence of an event in the managed device to the manager.
 7. RESPONSE - It is the command used to carry back the value(s) or signal of actions directed by the SNMP Manager.
 
 # Standard Procedures
 
-SNMP works as a simple operating model, called model "fetch-store" or "read-write model." Uses UDP protocol (port 161) to send and receiving requests, manager receives TRAPS in port 162(UDP).
+SNMP works as a simple operating model, called "fetch-store model" or "read-write model". It uses UDP protocol (port 161) to send and receive requests. Manager receives TRAPS in port 162 via UDP.
 Messages Format:
 Resquest: snmpget -v2c -c public 192.168.254.1 sysUpTimeInstance
 Response: DISMAIN-EVENT-MIB::sysUpTimeInstance = Timesticks: (355815) 0:59:18.15
@@ -165,14 +165,14 @@ The Figure 2 shows the TCP/IP protocol suite, which is the basis for all TCP/IP 
 +-+-+-+-+-+-+-+           +-+-+-+-+-+-+-+
 |     NAP     |           |     NAP     |
 +-+-+-+-+-+-+-+           +-+-+-+-+-+-+-+
-|   |   |   |             |   |   |     |
-|   |   |   |-----(1)-----|   |   |     |
-|   |   |                     |   |     |
-|   |   |---------(2)---------|   |     |
-|   |                             |     |    
-|   |-------------(3)-------------|     |
+|   |   |   |               |   |   |   |
+|   |   |   |------(1)------|   |   |   |
+|   |   |                       |   |   |
+|   |   |----------(2)----------|   |   |
+|   |                               |   |    
+|   |--------------(3)--------------|   |
 |                                       |
-|--Internetwork Connecting NMS to Agent-|
+|-Internetwork Connecting NMS to Agent -|
 
 (1): Trap sent to port 162 on the NMS
 (2): SNMP request sent from the NMS to the agent port 161
@@ -183,11 +183,11 @@ The Figure 2 shows the TCP/IP protocol suite, which is the basis for all TCP/IP 
 
 # SNMP Weakness
 
-This protocol is not appropriated for the managment of large and complex networks, due to the limitation on the pooling performance (pooling is the operation performed to begin a transaction between manager and agent);
+This protocol is not appropriated for the managment of large and complex networks due to the limitation on the pooling performance (pooling is the operation performed to begin a transaction between manager and agent);
 
-The basic SNMP standard provides only common authentication, to this problem the SNMP Research presents the ESO (Extended Security Options), a extended standard of encryption using the SNMPv3 standard technics. It defines, creates and deploys improvements to the security of the SNMPv3 architecture. Those three factors imply strong encryption, third party authentication and ignition key;
+The basic SNMP standard provides only common authentication, to this problem the SNMP Research presents the ESO (Extended Security Options), an extended standard of encryption using the SNMPv3 standard technics. It defines, creates and deploys improvements to the security of the SNMPv3 architecture. Those three factors imply strong encryption, third party authentication and ignition key;
 
-The SNMP MIB model is limitated and doesn't support applications wich question the managment, based on values and object types.
+The SNMP MIB model is limitated and does not support applications that question the management, based on values or object types.
 
 # Proposal
 
@@ -197,8 +197,8 @@ This intelligence must be integrated with the manager software using a reinforce
 
 But why?
 
-Let's imagine a scenario in IoT (Internet-of-Things). My home has a server controlling all the lights in the house. In this server, I'm using a SNMP manager in the server to control the status of each lamp. Each lamp has been set as a SNMP agent. With time and use, the server learns the exact time that I come home and turn on the lights. In a certain moment, when I come home, the server will automagically turn on the lights for me.
+Let's imagine a scenario in IoT (Internet-of-Things). Suppose someone has a home that has a server controlling all the lights in the house. In this server, there is a SNMP manager to control the status of each lamp. Each lamp has been set as a SNMP agent. With time and use, the server learns the exact time that she comes home and turns on the lights. In a certain moment, when she comes home, the server will automatically turn on the lights.
 
-What if I changed my habits?
+What if she changed her habits?
 
-We propose the software developers to include a reinforcement learning algorithm in the implementation of SNMP software suite for dealing with these cases. It may take a while, but it will adapt to the behaviors of the user.
+We propose the software developers to include a reinforcement learning algorithm in the implementation of SNMP software suite for dealing with these cases. It may take a while, but it will adapt to the user's behaviors.
