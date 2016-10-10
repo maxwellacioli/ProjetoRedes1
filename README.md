@@ -1,6 +1,6 @@
 ---
-title: Suggestion for Improvement in the SNMP Protocol
-abbrev: SNMP Improviment
+title: Suggestion for SNMP Improvement
+abbrev: SNMP Improvement
 date: 2016
 category: info
 ipr: trust200902
@@ -54,7 +54,7 @@ normative:
 
 informative:
   BOOK:
-    title: Essential SNMP
+    title: Essential SNMP 2nd ed.
     author:
 #      -
         ins: D. Mauro
@@ -63,16 +63,20 @@ informative:
 
 --- abstract
 
-It is an application layer protocol widely used in network management systems to facilitate the exchange of management information between different devices connected to the network. This paper proposes an improvement in the protocol, in order to avoid sending a large volume of information in a specific application of the protocol.
+SNMP is an application layer protocol widely used in network management systems. The protocol helps to facilitate the exchange of management information between different devices connected to the network. This document proposes an improvement in SNMP in order to avoid sending a large volume of information in a specific application of the protocol.
 
 --- middle
 
 # Introduction
 
-One of the weaknesses SNMP protocol {{RFC1157}} is the transmission of a large volume of unnecessary information to the manager when it makes a request for specific information to the agent. This information is in the MIB {{RFC1066}} as part of the agent's responses. This document presents a proposal that serves as an alternative to solve the mentioned weakness.
-In the first section will present a brief description of the SNMP protocol. Then, in section two the SNMP commands are described. In Section three discussed the standard protocol procedure. Section four will address the SNMP protocol weaknesses. The last section will bring the proposal for improving the SNMP protocol.
+One of the weaknesses of SNMP {{RFC1157}} is the transmission of a large volume of unnecessary information to the manager when it receives a response from the agent after a request. This information is carried in MIB {{RFC1066}} as part of the agent's response. This document presents a proposal that serves as an alternative to solve the mentioned weakness.
+In the first Section we present a brief description of the SNMP. Then, in Section 2 we describe SNMP commands. In Section 3 we discuss the standard protocol procedure. Section 4 addresses the SNMP weaknesses. The last Section will bring the proposal for improving the protocol.
 
 # Description
+
+SNMP is an application layer protocol widely used in network management systems to facilitate the exchange of management information between different devices connected to the network.
+It is based on the manager / agent model.
+It consists of the following components:
 
 ## Manager
 
@@ -194,6 +198,6 @@ But why?
 
 Let's imagine a scenario in IoT (Internet-of-Things). My home has a server controlling all the lights in the house. In this server, I'm using a SNMP manager in the server to control the status of each lamp. Each lamp has been set as a SNMP agent. With time and use, the server learns the exact time that I come home and turn on the lights. In a certain moment, when I come home, the server will automagically turn on the lights for me.
 
-What if I changed my habits?
+Were if I changed my habits?
 
 We propose the software developers to include a reinforcement learning algorithm in the implementation of SNMP software suite for dealing with these cases. It may take a while, but it will adapt to the behaviors of the user.
