@@ -116,7 +116,7 @@ MIB-II {{RFC1213}} is a specific MIB. Its main objective is to provide specific 
    +-+-+-+-+-+
    
 ~~~~~~~~~~
-{: #figops title="MIB-II Structure"}
+{: #mib2 title="MIB-II Structure"}
 
 # Protocol Commands
 
@@ -160,7 +160,7 @@ The SNMP doesn’t have a lot of commands. These commands must indicate the name
 (3): Response to SNMP request from the agent to port 161 on the NMS
 
 ~~~~~~~~~~~~~~~~~~~~
-{: #figops title="TCP/IP communication model and SNMP"}
+{: #model title="TCP/IP communication model and SNMP"}
 
 # SNMP Weakness
 
