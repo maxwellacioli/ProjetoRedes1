@@ -116,7 +116,7 @@ MIB-II {{RFC1213}} is a specific MIB. Its main objective is to provide specific 
    +-+-+-+-+-+
    
 ~~~~~~~~~~
-{: #figops title="MIB-II structure"}
+{: #figops title="MIB-II Structure"}
 
 # Protocol Commands
 
@@ -132,6 +132,35 @@ The SNMP doesn’t have a lot of commands. These commands must indicate the name
 7. RESPONSE - It is the command used to carry back the value(s) or signal of actions directed by the SNMP Manager.
 
 # Standard Procedures
+
+~~~~~~~~~~
+
++-+-+-+-+-+-+-+           +-+-+-+-+-+-+-+
+|     NMS	    |	   	      |    Agent    |
++-+-+-+-+-+-+-+           +-+-+-+-+-+-+-+
+| Application |		         | Application |
++-+-+-+-+-+-+-+           +-+-+-+-+-+-+-+
+|     UDP	    |   		      |   	 UDP     |
++-+-+-+-+-+-+-+           +-+-+-+-+-+-+-+
+|     IP	     |	   	      |	    IP      |
++-+-+-+-+-+-+-+           +-+-+-+-+-+-+-+
+|     NAP	    |		         |   	 NAP     |
++-+-+-+-+-+-+-+        	  +-+-+-+-+-+-+-+		
+|	  |	  |	  |             |   |   |     |
+|	  |	  |	  |-----(1)-----|   |   |     |
+|   |   |                     |   |     |
+|	  |	  |---------(2)---------|   |     |
+|	  |                             |     |    
+|	  |-------------(3)-------------|     |
+|                                       |
+|--Internetwork Connecting NMS to Agent-|
+
+(1): Trap sent to port 162 on the NMS
+(2): SNMP request sent from the NMS to the agent port 161
+(3): Response to SNMP request from the agent to port 161 on the NMS
+
+~~~~~~~~~~
+{: #figops title="TCP/IP communication model and SNMP"}
 
 # SNMP Weakness
 
