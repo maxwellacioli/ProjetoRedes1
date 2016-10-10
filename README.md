@@ -194,6 +194,6 @@ But why?
 
 Let's imagine a scenario in IoT (Internet-of-Things). My home has a server controlling all the lights in the house. In this server, I'm using a SNMP manager in the server to control the status of each lamp. Each lamp has been set as a SNMP agent. With time and use, the server learns the exact time that I come home and turn on the lights. In a certain moment, when I come home, the server will automagically turn on the lights for me.
 
-Were if I changed my habits?
+What if I changed my habits?
 
 We propose the software developers to include a reinforcement learning algorithm in the implementation of SNMP software suite for dealing with these cases. It may take a while, but it will adapt to the behaviors of the user.
