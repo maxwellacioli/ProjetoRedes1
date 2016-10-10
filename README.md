@@ -51,15 +51,15 @@ normative:
   RFC1066:
   RFC1213:
 
+
 informative:
   BOOK:
-  title: Essential SNMP 2nd. ed.
-  author: 
+    title: Essential SNMP
+    author:
 #      -
-        ins: M. Douglas
-        name: Mauro Douglas
-        date: 2005
-        publisher: O Reilly
+        ins: D. Mauro
+        name: Douglas Mauro
+    date: 2005
 
 --- abstract
 
