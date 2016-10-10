@@ -133,7 +133,7 @@ The SNMP doesn’t have a lot of commands. These commands must indicate the name
 
 # Standard Procedures
 
-~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 +-+-+-+-+-+-+-+           +-+-+-+-+-+-+-+
 |     NMS	    |	   	      |    Agent    |
@@ -159,7 +159,7 @@ The SNMP doesn’t have a lot of commands. These commands must indicate the name
 (2): SNMP request sent from the NMS to the agent port 161
 (3): Response to SNMP request from the agent to port 161 on the NMS
 
-~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 {: #figops title="TCP/IP communication model and SNMP"}
 
 # SNMP Weakness
